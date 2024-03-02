@@ -8,8 +8,7 @@ function App() {
   }, []);
    
   const apiTesting = () => {
-    fetchDataFromApi('/movie/popular')
-      .them((res) => {
+    fetchDataFromApi('/movie/popular').them((res) => {
         console.log(res);
       });
   };
