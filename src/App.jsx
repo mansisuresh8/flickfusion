@@ -4,14 +4,15 @@ import {fetchDataFromApi} from "./utils/api";
 function App() {
 
   useEffect(() => {
-    apiTesting();
-  }, []);
-   
-  const apiTesting = () => {
-    fetchDataFromApi('/movie/popular').them((res) => {
-        console.log(res);
+      apiTesting();
+   }, []);
+
+   const apiTesting = () => {
+      fetchDataFromApi("/movie/popular").then((res) => {
+         console.log(res);
+         dispatch(getApiConfiguration(res));
       });
-  };
+   };
 
   return <div className='App'>App</div>;
 }
