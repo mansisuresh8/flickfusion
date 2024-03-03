@@ -30,11 +30,15 @@ function HeroBanner() {
 
   return (
     <div className="heroBanner">
-      <div className="backdrop-img">
-        <img src="background" />
-      </div>
+      {!loading && (
+        <div className="backdrop-img">
+          <img src={background} />
+        </div>
+      )}
 
-      <div className="wrapper">
+      <div className="opacity layer"></div>
+
+      <contentwrappr>
         <div className="heroBannerContent">
           <span className="title">Welcome to FlickFusion</span>
           <span className="subTitle">
@@ -50,7 +54,7 @@ function HeroBanner() {
             <button>Search</button>
           </div>
         </div>
-      </div>
+      </contentwrappr>
     </div>
   );
 }
