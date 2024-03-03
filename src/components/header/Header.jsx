@@ -3,7 +3,7 @@ import "./style.scss";
 
 const header = () => {
   return (
-    <div>header</div>
+    <div>Header</div>
   )
 }
 
