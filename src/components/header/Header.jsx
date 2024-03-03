@@ -1,10 +1,57 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { HiOutlineSearch } from "react-icons/hi";
+import { SlMenu } from "react-icons/sl";
+import { VscChromeClose } from "react-icons/vsc";
+import { useNavigate, useLocation } from "react-router-dom";
+
 import "./style.scss";
 
-const header = () => {
-  return (
-    <div>Header</div>
-  )
-}
+import ContentWrapper from "../contentWrapper/contentWrapper";
+import logo from "../../assets/movix-logo.svg";
 
-export default header
+const Header = () => {
+  const [show, setShow] = useState("top");
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const [query, setQuery] = useState("");
+  const [showSearch, setShowSearch] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const openSearch = () => {
+    setMobileMenu(false);
+    setShowSearch(true);
+  };
+
+  const openMobileMenu = () => {
+    setMobileMenu(true);
+    setShowSearch(false);
+  };
+
+  return (
+    <header className="header">
+      <contentWrapper>
+        <div className="log">
+          <img src={logo} alt="" />
+        </div>
+        <ul className="menuItems">
+          <li className="menuItems">Movies</li>
+          <li className="menuItems">TV Shows</li>
+          <li className="menuItems">
+            <HiOutlineSearch />
+          </li>
+        </ul>
+        <div className="mobileMenuItems">
+          <HiOutlineSearch />
+          {mobileMenu ? (
+            <VscChromeClose onClick={() => setMobileMenu(false)} />
+          ) : (
+            <SlMenu onClick={openMobileMenu} />
+          )}
+        </div>
+      </contentWrapper>
+    </header>
+  );
+};
+
+export default Header;
