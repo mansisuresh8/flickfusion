@@ -6,7 +6,7 @@ import "./style.scss";
 import useFetch from "../../../hooks/useFetch";
 
 import Img from "../../../components/lazyLoadImage/img";
-import ContentWrapper from "../../../components/contentWrapper/contentWrapper";
+import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 
 function HeroBanner() {
   const [background, setBackground] = useState("");
@@ -36,11 +36,11 @@ function HeroBanner() {
         </div>
       )}
 
-      <div className="opacity layer"></div>
+      <div className="opacity-layer"></div>
 
-      <contentwrappr>
+      <ContentWrapper>
         <div className="heroBannerContent">
-          <span className="title">Welcome to FlickFusion</span>
+          <span className="title">Welcome</span>
           <span className="subTitle">
             Millions of movies, TV Shows and People to Discover. Explore Now.
           </span>
@@ -54,7 +54,7 @@ function HeroBanner() {
             <button>Search</button>
           </div>
         </div>
-      </contentwrappr>
+      </ContentWrapper>
     </div>
   );
 }
