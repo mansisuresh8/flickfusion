@@ -5,7 +5,7 @@ import "./style.scss";
 
 import useFetch from "../../../hooks/useFetch";
 
-import Img from "../../../components/lazyLoadImage/img";
+import Img from "../../../components/lazyLoadImage/Img";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 
 function HeroBanner() {
@@ -32,7 +32,7 @@ function HeroBanner() {
     <div className="heroBanner">
       {!loading && (
         <div className="backdrop-img">
-          <img src={background} />
+          <Img src={background} />
         </div>
       )}
 

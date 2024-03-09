@@ -1,10 +1,10 @@
 import React from 'react'
 import "./style.scss"
 
-function pageNotFound() {
+function PageNotFound() {
   return (
     <div>pageNotFound</div>
   )
 }
 
-export default pageNotFound
+export default PageNotFound
