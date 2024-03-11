@@ -16,7 +16,7 @@ import HomePage from "./pages/home/HomePage";
 function App() {
   const dispatch = useDispatch();
   const { url } = useSelector((state) => state.home);
-  console.log(url);
+  // console.log(url);
 
   useEffect(() => {
     fetchApiConfig();
