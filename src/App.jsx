@@ -56,7 +56,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="flickfusion"> 
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />}/>
